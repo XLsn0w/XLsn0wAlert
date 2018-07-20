@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "XLsn0wShow.h"
+#import "XLsn0wAlertKit.h"
 
 @interface ViewController ()
 
@@ -22,7 +22,25 @@
 
 - (IBAction)show:(id)sender {
     XLsn0wShow *show = [XLsn0wShow new];
-    [show showCenterWithText:@"重复叠加不会叠加XLsn0wShow"];
+    [show showCenterWithText:@"重复点击不会叠加XLsn0wShow"];
+}
+
+- (IBAction)alert:(id)sender {
+    XLsn0wAlert *controller = [XLsn0wAlert alertControllerWithTitle:@"警告" message:@"请退出登录"];
+    
+    XLsn0wAction *action1 = [XLsn0wAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"点击了取消");
+    }];
+    
+    XLsn0wAction *action2 = [XLsn0wAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"点击了确定");
+    }];
+    [controller addAction:action1];
+    [controller addAction:action2];
+    
+    [self presentViewController:controller animated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

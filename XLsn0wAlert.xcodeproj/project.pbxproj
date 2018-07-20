@@ -16,6 +16,8 @@
 		6603BB5A21017CDA00F7A98D /* XLsn0wAlertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6603BB5921017CDA00F7A98D /* XLsn0wAlertTests.m */; };
 		6603BB6521017CDA00F7A98D /* XLsn0wAlertUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6603BB6421017CDA00F7A98D /* XLsn0wAlertUITests.m */; };
 		6603BB7521017DF200F7A98D /* XLsn0wShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6603BB7421017DF200F7A98D /* XLsn0wShow.m */; };
+		6670C6092101B84B0053378D /* XLsn0wAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6670C6082101B84B0053378D /* XLsn0wAlert.m */; };
+		6670C60D2101BA110053378D /* UIViewController+AlertOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6670C60C2101BA110053378D /* UIViewController+AlertOperationQueue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,11 @@
 		6603BB6621017CDA00F7A98D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6603BB7321017DF200F7A98D /* XLsn0wShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLsn0wShow.h; sourceTree = "<group>"; };
 		6603BB7421017DF200F7A98D /* XLsn0wShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLsn0wShow.m; sourceTree = "<group>"; };
+		6670C6072101B84B0053378D /* XLsn0wAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLsn0wAlert.h; sourceTree = "<group>"; };
+		6670C6082101B84B0053378D /* XLsn0wAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLsn0wAlert.m; sourceTree = "<group>"; };
+		6670C60A2101B89D0053378D /* XLsn0wAlertKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLsn0wAlertKit.h; sourceTree = "<group>"; };
+		6670C60B2101BA110053378D /* UIViewController+AlertOperationQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AlertOperationQueue.h"; sourceTree = "<group>"; };
+		6670C60C2101BA110053378D /* UIViewController+AlertOperationQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AlertOperationQueue.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,7 @@
 		6603BB3421017CD900F7A98D = {
 			isa = PBXGroup;
 			children = (
+				6670C6062101B84B0053378D /* XLsn0wAlertKit */,
 				6603BB7221017DF200F7A98D /* XLsn0wShow */,
 				6603BB3F21017CD900F7A98D /* XLsn0wAlert */,
 				6603BB5821017CDA00F7A98D /* XLsn0wAlertTests */,
@@ -143,6 +151,18 @@
 				6603BB7421017DF200F7A98D /* XLsn0wShow.m */,
 			);
 			path = XLsn0wShow;
+			sourceTree = "<group>";
+		};
+		6670C6062101B84B0053378D /* XLsn0wAlertKit */ = {
+			isa = PBXGroup;
+			children = (
+				6670C60A2101B89D0053378D /* XLsn0wAlertKit.h */,
+				6670C6072101B84B0053378D /* XLsn0wAlert.h */,
+				6670C6082101B84B0053378D /* XLsn0wAlert.m */,
+				6670C60B2101BA110053378D /* UIViewController+AlertOperationQueue.h */,
+				6670C60C2101BA110053378D /* UIViewController+AlertOperationQueue.m */,
+			);
+			path = XLsn0wAlertKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6603BB7521017DF200F7A98D /* XLsn0wShow.m in Sources */,
+				6670C60D2101BA110053378D /* UIViewController+AlertOperationQueue.m in Sources */,
+				6670C6092101B84B0053378D /* XLsn0wAlert.m in Sources */,
 				6603BB4521017CD900F7A98D /* ViewController.m in Sources */,
 				6603BB5021017CDA00F7A98D /* main.m in Sources */,
 				6603BB4221017CD900F7A98D /* AppDelegate.m in Sources */,

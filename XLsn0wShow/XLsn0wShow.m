@@ -22,6 +22,7 @@
     dispatch_semaphore_t semaphore;
 }
 
+@property(nonatomic,strong)UIButton *hideView;
 @property(nonatomic,strong)UIButton *contentView;
 @property(nonatomic,assign)CGFloat duration;
 
@@ -31,6 +32,11 @@
 
 - (instancetype)initWithText:(NSString *)text {
     if (self = [super init]) {
+        
+        self.hideView = [[UIButton alloc] initWithFrame:[[UIApplication sharedApplication] keyWindow].bounds];
+        [[[[UIApplication sharedApplication] windows] lastObject] addSubview:self.hideView];
+        self.hideView.backgroundColor = [UIColor clearColor];
+        [self.hideView addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchDown];
 
         UIFont *font = [UIFont boldSystemFontOfSize:16];
         NSDictionary * dict=[NSDictionary dictionaryWithObject: font forKey:NSFontAttributeName];
@@ -43,6 +49,8 @@
         textLabel.text = text;
         textLabel.numberOfLines = 0;
         
+
+        
         self.contentView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, textLabel.frame.size.width, textLabel.frame.size.height)];
         self.contentView.layer.cornerRadius = 20.0f;
         self.contentView.backgroundColor = ToastBackgroundColor;
@@ -52,13 +60,16 @@
         self.contentView.alpha = 0.0f;
         self.duration = ToastDispalyDuration;
         
+        
+        [self.hideView addSubview:self.contentView];
+
+        
     }
     
     return self;
 }
 
 -(void)dismissToast{
-    
     [self.contentView removeFromSuperview];
 }
 
@@ -83,12 +94,10 @@
     [UIView setAnimationDuration:0.3];
     self.contentView.alpha = 0.0f;
     [UIView commitAnimations];
-//    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    dispatch_semaphore_signal(semaphore);///信号量加1
 }
 
--(void)hide {
-    self.contentView.alpha = 0.0f;
+- (void)hide {
+    [self.hideView removeFromSuperview];
 }
 
 + (UIWindow *)window {
@@ -97,7 +106,7 @@
 
 - (void)showIn:(UIView *)view{
     self.contentView.center = view.center;
-    [view  addSubview:self.contentView];
+    [view  addSubview:self.hideView];
     [self showAnimation];
     [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:self.duration];
 }
@@ -128,19 +137,7 @@
 - (void)showCenterWithText:(NSString *)text duration:(CGFloat)duration{
     XLsn0wShow *toast = [[XLsn0wShow alloc] initWithText:text];
     toast.duration = duration;
-    semaphore = dispatch_semaphore_create(0);
-    NSLog(@"semaphore=== %@", semaphore);
-    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [toast showIn:[[[UIApplication sharedApplication] windows] lastObject]];
-        });
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    }];
-
-    if ([self sharedGlobalOperationQueue].operations.lastObject) {
-        [operation addDependency:[self sharedGlobalOperationQueue].operations.lastObject];
-    }
-    [[self sharedGlobalOperationQueue] addOperation:operation];
+    [toast showIn:[[[UIApplication sharedApplication] windows] lastObject]];
 }
 
 ///队列来管理
