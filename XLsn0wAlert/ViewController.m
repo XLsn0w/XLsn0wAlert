@@ -41,6 +41,8 @@
     [self presentViewController:controller animated:YES completion:^{
         
     }];
+    
+    [self set];
 }
 
 - (void)didReceiveMemoryWarning {

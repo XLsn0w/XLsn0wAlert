@@ -11,5 +11,6 @@
 
 #import "XLsn0wAlert.h"
 #import "XLsn0wShow.h"
+#import "UIViewController+AlertOperationQueue.h"
 
 #endif /* XLsn0wAlertKit_h */
