@@ -36,7 +36,7 @@
         self.hideView = [[UIButton alloc] initWithFrame:[[UIApplication sharedApplication] keyWindow].bounds];
         [[[[UIApplication sharedApplication] windows] lastObject] addSubview:self.hideView];
         self.hideView.backgroundColor = [UIColor clearColor];
-        [self.hideView addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchDown];
+//        [self.hideView addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchDown];
 
         UIFont *font = [UIFont boldSystemFontOfSize:16];
         NSDictionary * dict=[NSDictionary dictionaryWithObject: font forKey:NSFontAttributeName];

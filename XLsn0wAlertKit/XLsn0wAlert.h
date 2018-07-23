@@ -1,10 +1,3 @@
-//
-//  ALPAlertController.h
-//  SKAlertControllerDemo
-//
-//  Created by Apple on 16/12/6.
-//  Copyright © 2016年 Apple. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 #ifndef SCREEN_WIDTH

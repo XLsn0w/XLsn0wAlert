@@ -1,10 +1,3 @@
-//
-//  ALPAlertController.m
-//  SKAlertControllerDemo
-//
-//  Created by Apple on 16/12/6.
-//  Copyright © 2016年 Apple. All rights reserved.
-//
 
 #import "XLsn0wAlert.h"
 
