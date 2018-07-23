@@ -10,19 +10,19 @@
  *********************************************************************************************/
 
 #import "XLsn0wShow.h"
+#import "AlertRepeatRecorder.h"
 
 //Toast默认停留时间
 #define ToastDispalyDuration 1.2f
 //Toast到顶端/底端默认距离
 #define ToastSpace 100.0f
 //Toast背景颜色
-#define ToastBackgroundColor [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.75]
+#define ToastBackgroundColor [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.6]
 
 @interface XLsn0wShow () {
     dispatch_semaphore_t semaphore;
 }
 
-@property(nonatomic,strong)UIButton *hideView;
 @property(nonatomic,strong)UIButton *contentView;
 @property(nonatomic,assign)CGFloat duration;
 
@@ -33,11 +33,6 @@
 - (instancetype)initWithText:(NSString *)text {
     if (self = [super init]) {
         
-        self.hideView = [[UIButton alloc] initWithFrame:[[UIApplication sharedApplication] keyWindow].bounds];
-        [[[[UIApplication sharedApplication] windows] lastObject] addSubview:self.hideView];
-        self.hideView.backgroundColor = [UIColor clearColor];
-//        [self.hideView addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchDown];
-
         UIFont *font = [UIFont boldSystemFontOfSize:16];
         NSDictionary * dict=[NSDictionary dictionaryWithObject: font forKey:NSFontAttributeName];
         CGRect rect=[text boundingRectWithSize:CGSizeMake(250,CGFLOAT_MAX) options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil];
@@ -52,17 +47,13 @@
 
         
         self.contentView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, textLabel.frame.size.width, textLabel.frame.size.height)];
-        self.contentView.layer.cornerRadius = 20.0f;
+        self.contentView.layer.cornerRadius = 8;
         self.contentView.backgroundColor = ToastBackgroundColor;
         [self.contentView addSubview:textLabel];
         self.contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self.contentView addTarget:self action:@selector(toastTaped:) forControlEvents:UIControlEventTouchDown];
         self.contentView.alpha = 0.0f;
         self.duration = ToastDispalyDuration;
-        
-        
-        [self.hideView addSubview:self.contentView];
-
         
     }
     
@@ -97,18 +88,38 @@
 }
 
 - (void)hide {
-    [self.hideView removeFromSuperview];
+//    [self.hideView removeFromSuperview];
 }
 
 + (UIWindow *)window {
     return [[[UIApplication sharedApplication] windows] lastObject];
 }
 
-- (void)showIn:(UIView *)view{
+- (void)showIn:(UIView *)view {
+    NSLog(@"count=== %ld", [AlertRepeatRecorder shared].shows.count);
     self.contentView.center = view.center;
-    [view  addSubview:self.hideView];
-    [self showAnimation];
-    [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:self.duration];
+    for (UIView *view in [AlertRepeatRecorder shared].shows) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            [self hideAnimation];
+        }
+    }
+
+    [[AlertRepeatRecorder shared].shows addObject:view];
+    if ([AlertRepeatRecorder shared].shows.count == 1) {
+        [view  addSubview:self.contentView];
+        [self showAnimation];
+        [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:self.duration];
+    } else {
+       [[AlertRepeatRecorder shared].shows removeAllObjects];
+       [[AlertRepeatRecorder shared].shows addObject:view];
+        [view  addSubview:self.contentView];
+        [self showAnimation];
+        [self performSelector:@selector(hideAnimation) withObject:nil afterDelay:self.duration];
+    }
+    
+
+    
+    
 }
 
 - (void)showIn:(UIView *)view fromTopOffset:(CGFloat)top{

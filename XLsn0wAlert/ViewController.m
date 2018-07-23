@@ -42,7 +42,6 @@
         
     }];
     
-    [self set];
 }
 
 - (void)didReceiveMemoryWarning {
