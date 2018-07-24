@@ -19,6 +19,7 @@
 		6656E57621057402006A9E5D /* AlertRepeatRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6656E57521057402006A9E5D /* AlertRepeatRecorder.m */; };
 		6670C6092101B84B0053378D /* XLsn0wAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6670C6082101B84B0053378D /* XLsn0wAlert.m */; };
 		6670C60D2101BA110053378D /* UIViewController+AlertOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6670C60C2101BA110053378D /* UIViewController+AlertOperationQueue.m */; };
+		668F1B052107186800DFE57A /* MacroSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F1B042107186800DFE57A /* MacroSingleton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,9 @@
 		6670C60A2101B89D0053378D /* XLsn0wAlertKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLsn0wAlertKit.h; sourceTree = "<group>"; };
 		6670C60B2101BA110053378D /* UIViewController+AlertOperationQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AlertOperationQueue.h"; sourceTree = "<group>"; };
 		6670C60C2101BA110053378D /* UIViewController+AlertOperationQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AlertOperationQueue.m"; sourceTree = "<group>"; };
+		668F1B022107114900DFE57A /* MacroSingletonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroSingletonHeader.h; sourceTree = "<group>"; };
+		668F1B032107186800DFE57A /* MacroSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroSingleton.h; sourceTree = "<group>"; };
+		668F1B042107186800DFE57A /* MacroSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacroSingleton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,9 @@
 			children = (
 				6603BB4021017CD900F7A98D /* AppDelegate.h */,
 				6603BB4121017CD900F7A98D /* AppDelegate.m */,
+				668F1B022107114900DFE57A /* MacroSingletonHeader.h */,
+				668F1B032107186800DFE57A /* MacroSingleton.h */,
+				668F1B042107186800DFE57A /* MacroSingleton.m */,
 				6603BB4321017CD900F7A98D /* ViewController.h */,
 				6603BB4421017CD900F7A98D /* ViewController.m */,
 				6603BB4621017CD900F7A98D /* Main.storyboard */,
@@ -300,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668F1B052107186800DFE57A /* MacroSingleton.m in Sources */,
 				6603BB7521017DF200F7A98D /* XLsn0wShow.m in Sources */,
 				6670C60D2101BA110053378D /* UIViewController+AlertOperationQueue.m in Sources */,
 				6656E57621057402006A9E5D /* AlertRepeatRecorder.m in Sources */,

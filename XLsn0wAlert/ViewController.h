@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MacroSingleton.h"
 
 @interface ViewController : UIViewController
+
+singleton_interface(ViewController)
 
 
 @end

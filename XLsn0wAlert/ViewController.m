@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "XLsn0wAlertKit.h"
+#import "MacroSingleton.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    singleton_implementation(ViewController)
 }
 
 - (IBAction)show:(id)sender {
