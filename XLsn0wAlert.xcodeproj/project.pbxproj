@@ -20,7 +20,6 @@
 		6670C6092101B84B0053378D /* XLsn0wAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6670C6082101B84B0053378D /* XLsn0wAlert.m */; };
 		6670C60D2101BA110053378D /* UIViewController+AlertOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6670C60C2101BA110053378D /* UIViewController+AlertOperationQueue.m */; };
 		668F1B052107186800DFE57A /* MacroSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 668F1B042107186800DFE57A /* MacroSingleton.m */; };
-		66FB24DC210B030D003717D5 /* XLsn0wPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FB24DB210B030D003717D5 /* XLsn0wPopup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,8 +68,6 @@
 		668F1B022107114900DFE57A /* MacroSingletonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroSingletonHeader.h; sourceTree = "<group>"; };
 		668F1B032107186800DFE57A /* MacroSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroSingleton.h; sourceTree = "<group>"; };
 		668F1B042107186800DFE57A /* MacroSingleton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacroSingleton.m; sourceTree = "<group>"; };
-		66FB24DA210B030D003717D5 /* XLsn0wPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLsn0wPopup.h; sourceTree = "<group>"; };
-		66FB24DB210B030D003717D5 /* XLsn0wPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLsn0wPopup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +98,6 @@
 		6603BB3421017CD900F7A98D = {
 			isa = PBXGroup;
 			children = (
-				66FB24D9210B030D003717D5 /* XLsn0wPopup */,
 				6670C6062101B84B0053378D /* XLsn0wAlertKit */,
 				6603BB7221017DF200F7A98D /* XLsn0wShow */,
 				6603BB3F21017CD900F7A98D /* XLsn0wAlert */,
@@ -179,16 +175,6 @@
 				6670C60C2101BA110053378D /* UIViewController+AlertOperationQueue.m */,
 			);
 			path = XLsn0wAlertKit;
-			sourceTree = "<group>";
-		};
-		66FB24D9210B030D003717D5 /* XLsn0wPopup */ = {
-			isa = PBXGroup;
-			children = (
-				66FB24DA210B030D003717D5 /* XLsn0wPopup.h */,
-				66FB24DB210B030D003717D5 /* XLsn0wPopup.m */,
-			);
-			name = XLsn0wPopup;
-			path = ../Desktop/XLsn0wPopup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,7 +307,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FB24DC210B030D003717D5 /* XLsn0wPopup.m in Sources */,
 				668F1B052107186800DFE57A /* MacroSingleton.m in Sources */,
 				6603BB7521017DF200F7A98D /* XLsn0wShow.m in Sources */,
 				6670C60D2101BA110053378D /* UIViewController+AlertOperationQueue.m in Sources */,
